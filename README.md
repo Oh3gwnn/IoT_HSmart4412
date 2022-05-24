@@ -8,7 +8,7 @@
 >기존에 존재하는 프로젝트들의 전체적인 구조와 IEB Board 사용 참고
 
  - **프로젝트 계획**
->'**Keep Talking and Nobody Explodes**' 게임 참고
+>['**Keep Talking and Nobody Explodes**'](http://www.keeptalkinggame.com/) 게임 참고
 
 
 'IoT프로그래밍_8조_20220516.pdf' 참고 : [프로젝트 계획 발표](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/IoT%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_8%EC%A1%B0_20220516.pdf)
