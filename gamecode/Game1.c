@@ -67,25 +67,25 @@ int main()
 	  	close(tactsw);
 	  	
 		switch (t){
-			case 1: printf("%dÀÔ·Â\n", t); num[i]=1; usleep(250000);
+			case 1: printf("%dìž…ë ¥\n", t); num[i]=1; usleep(250000);
 						i++;
 						for (k=0; k< 4; k++){
 							printf("%d ",num[k]);
 						}
 						break;
-	    	case 2: printf("%dÀÔ·Â\n", t); num[i]=2; usleep(250000);
+	    	case 2: printf("%dìž…ë ¥\n", t); num[i]=2; usleep(250000);
 						i++;
 						for (k=0; k< 4; k++){
 							printf("%d ",num[k]);
 						}
 						break;
-	    	case 4: printf("%dÀÔ·Â\n", t); num[i]=3; usleep(250000);
+	    	case 4: printf("%dìž…ë ¥\n", t); num[i]=3; usleep(250000);
 						i++;
 						for (k=0; k< 4; k++){
 							printf("%d ",num[k]);
 						}
 						break;
-	    	case 5: printf("%dÀÔ·Â\n", t); num[i]=4; usleep(250000); 
+	    	case 5: printf("%dìž…ë ¥\n", t); num[i]=4; usleep(250000); 
 					 	i++; 
 						for (k=0; k< 4; k++){
 							printf("%d ",num[k]);
