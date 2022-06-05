@@ -1,12 +1,10 @@
 
 # **폭탄 해체 게임(H-Smart4412 이용)**
-	폭탄 해체 게임 보고서 정리
+	**폭탄 해체 게임 보고서 정리**
 
 ### **1. Bomb Breakdown_01_20220516**
 
- - [게임 제작 사전조사 보고서](https://docs.google.com/document/d/18wyuJe8805JIE2ftS6ue8w0owCxuHiCCFlvMyepP3zM/edit?usp=sharing)
-
-발표자 : 임형택
+ - [게임 제작 사전조사 보고서](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/Docs/Bomb%20Breakdown_01_20220516.pdf)
 
 ### **2. Bomb Breakdown_02_20220524**
 
