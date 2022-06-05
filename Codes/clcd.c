@@ -18,7 +18,7 @@ unsigned char t;
 int main(){
 	clcds = open(clcd, O_RDWR);
 	if(clcds < 0){printf("Can't open Character LCD.\n"); exit(0);}
-	char pr_clcd[40] = "Wrong Direction!  - 10 Second!  ";
+	char pr_clcd[40] = "Test Character    Test Character  ";
 	write(clcds, pr_clcd, strlen(pr_clcd));
 	close(clcds);
 	
