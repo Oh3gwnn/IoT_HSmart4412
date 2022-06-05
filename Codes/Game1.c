@@ -8,10 +8,8 @@
 #include <string.h>
 #include <time.h>
 
-
 #define dot "/dev/dot"
 #define tact "/dev/tactsw"
-int reset(int a[], int b[], unsigned char c[], int i, int j);
 int array_equal(int a[], int b[], int size);
 
 int dot_mtx;
@@ -36,7 +34,6 @@ unsigned char d[5][8] = {
     {0xC0, 0x1B, 0xBD, 0xAE, 0x23, 0xF8, 0xFC, 0x82},
     {0x66, 0xFE, 0x5D, 0x52, 0xB9, 0x26, 0xE5, 0x81}
   	};
-unsigned char t;
 
 int main()
 {
@@ -50,7 +47,7 @@ int main()
 	
 	while(1){
 		dot_mtx = open(dot, O_RDWR);
-  		if (dot_mtx < 0) {printf("Can't open dot matrix.\n"); return 0;}
+  		if (dot_mtx < 0) {printf("Can't open dot matrix.\n"); exit(0);}
 		switch (random){
 			case 0: write(dot_mtx, &d[0], sizeof(d[0])); usleep(50000); break;
 	    	case 1: write(dot_mtx, &d[1], sizeof(d[1])); usleep(50000); break;
@@ -61,7 +58,7 @@ int main()
   		close(dot_mtx);
   		
 	  	tactsw = open(tact, O_RDWR);
-		if (tact < 0) {printf("Can't open tact\n"); return 0;}
+		if (tact < 0) {printf("Can't open tact\n"); exit(0);}
 		
 	  	read(tactsw, &t, sizeof(t));
 	  	close(tactsw);

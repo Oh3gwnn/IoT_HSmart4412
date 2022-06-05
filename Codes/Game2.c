@@ -10,26 +10,25 @@
 
 #define dot "/dev/dot"
 #define tact "/dev/tactsw"
-int reset(int a[], int b[], unsigned char c[], int i, int j);
 int array_equal(int a[], int b[], int size);
 
 int dot_mtx;
 int tactsw;
 unsigned char t;
-int ans[16] = {5,9,9,9,5,5,7,7,7,5,9,9,5,9,9,5};
-int num[16] = {0,};
-int k=0;
-int i=0;
-int j=7;
-unsigned char c[8] = {0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-unsigned char d[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20};
-unsigned char t;
 
 int main()
 {
+	int ans[16] = {5,9,9,9,5,5,7,7,7,5,9,9,5,9,9,5};
+	int num[16] = {0,};
+	int k=0;
+	int i=0;
+	int j=7;
+	unsigned char c[8] = {0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+	unsigned char d[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20};
+
 	while(1){
 		dot_mtx = open(dot, O_RDWR);
-  		if (dot_mtx < 0) {printf("Can't open dot matrix.\n"); return 0;} //예외
+  		if (dot_mtx < 0) {printf("Can't open dot matrix.\n"); exit(0);} //예외
 		
 		d[0] = c[0];
 		d[1] = c[1];
@@ -38,13 +37,13 @@ int main()
   		close(dot_mtx);
   		
 	  	tactsw = open(tact, O_RDWR);
-		if (tact < 0) {printf("Can't open tact\n"); return 0;}
+		if (tact < 0) {printf("Can't open tact\n"); exit(0);}
 		
 	  	read(tactsw, &t, sizeof(t));
 	  	close(tactsw);
 	  	
 		switch (t){
-			case 5: printf("%d입력\n", t); num[i]=5; usleep(250000);
+			case 5: printf("Input %d\n", t); num[i]=5; usleep(250000);
 					if(ans[i]!=num[i]){
 						break;
 					}
@@ -58,7 +57,7 @@ int main()
 						}
 						break;
 					}	//위 
-	    	case 7: printf("%d입력\n", t); num[i]=7; usleep(250000);
+	    	case 7: printf("Input %d\n", t); num[i]=7; usleep(250000);
 	    			if(ans[i]!=num[i]){
 						break;
 					}
@@ -70,7 +69,7 @@ int main()
 						}
 						break;
 					}					//왼쪽 
-	    	case 9: printf("%d입력\n", t); num[i]=9; usleep(250000);
+	    	case 9: printf("Input %d\n", t); num[i]=9; usleep(250000);
 	    			if(ans[i]!=num[i]){
 						break;
 					}
@@ -81,7 +80,7 @@ int main()
 						}
 						break;
 					}					//오른쪽 
-	    	case 11: printf("%d입력\n", t); num[i]=11; usleep(250000); 
+	    	case 11: printf("Input %d\n", t); num[i]=11; usleep(250000); 
 	    			 if(ans[i]!=num[i]){
 						break;
 						}
