@@ -35,7 +35,7 @@ int main()
 	  	read(dips, &c, sizeof(c));
   		
 		if(data[0]==0xad){
-			printf("%d ÀÔ·Â\n", c); 
+			printf("%d ìž…ë ¥\n", c); 
 			if (c == 64){
 			close(dips);
 			close(leds);
@@ -44,7 +44,7 @@ int main()
 			else if(c != 64 && c != 0){return 0;}
 		}
 		if(data[0]==0x5c){
-	    	printf("%d ÀÔ·Â\n", c);
+	    	printf("%d ìž…ë ¥\n", c);
 	    	if (c == 1){
 			close(dips);
 			close(leds);
@@ -53,7 +53,7 @@ int main()
 			else if(c != 1 && c != 0){return 0;}
 		}
 		if(data[0]==0xc8){
-	    	printf("%d ÀÔ·Â\n", c);
+	    	printf("%d ìž…ë ¥\n", c);
 			if (c == 2){
 			close(dips);
 			close(leds);
