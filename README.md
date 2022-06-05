@@ -53,7 +53,7 @@
 
 ## **4. 3차 중간 발표(22.06.07)**
 
- - 'IoT 프로그래밍 8조 폭탄 해체 게임 - 3' 참고 : [3차 중간 발표](https://docs.google.com/document/d/1gHcK0-FiGUvA0DYAOu1RZ-o5m-i1AtpV3A5RLSvth9A/edit?usp=sharing)
+ - 'IoT 프로그래밍 8조 폭탄 해체 게임 - 3' 참고 : [3차 중간 발표](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
 
  - **세번째 게임 - 선 끊기**
 >매뉴얼, 작동 원리, 실행 결과 등 작성(자세한 내용은 제작한 문서 참고)
