@@ -1,19 +1,19 @@
 
-// Bomb Breakdown(ÆøÅº ÇØÃ¼ °ÔÀÓ) Code 
-// ±âº»ÀûÀ¸·Î TeraTerm, Å¸°Ù ½Ã½ºÅÛ µÑ ´Ù Ãâ·Â µÉ ¼ö ÀÖ°Ô Á¦ÀÛÇÏ¿´½À´Ï´Ù. 
+// Bomb Breakdown(í­íƒ„ í•´ì²´ ê²Œì„) Code 
+// ê¸°ë³¸ì ìœ¼ë¡œ TeraTerm, íƒ€ê²Ÿ ì‹œìŠ¤í…œ ë‘˜ ë‹¤ ì¶œë ¥ ë  ìˆ˜ ìˆê²Œ ì œì‘í•˜ì˜€ìŠµë‹ˆë‹¤. 
 
-// »ç¿ëÇÑ Çì´õÆÄÀÏ Á¾·ù 
-#include<stdio.h> 			// ÀÔÃâ·Â °ü·Ã 
-#include<stdlib.h> 			// ¹®ÀÚ¿­ º¯È¯, ¸Ş¸ğ¸® °ü·Ã 
-#include<unistd.h> 			// POSIX ¿î¿µÃ¼Á¦ API¿¡ ´ëÇÑ ¾×¼¼½º Á¦°ø 
-#include<fcntl.h> 			// Å¸°Ù½Ã½ºÅÛ ÀÔÃâ·Â ÀåÄ¡ °ü·Ã 
-#include<sys/types.h> 		// ½Ã½ºÅÛ¿¡¼­ »ç¿ëÇÏ´Â ÀÚ·áÇü Á¤º¸ 
-#include<sys/ioctl.h> 		// ÇÏµå¿ş¾îÀÇ Á¦¾î¿Í »óÅÂ Á¤º¸ 
-#include<sys/stat.h> 		// ÆÄÀÏÀÇ »óÅÂ¿¡ ´ëÇÑ Á¤º¸ 
-#include <string.h> 		// ¹®ÀÚ¿­ Ã³¸® 
-#include <time.h> 			// ½Ã°£ °ü·Ã 
+// ì‚¬ìš©í•œ í—¤ë”íŒŒì¼ ì¢…ë¥˜ 
+#include<stdio.h> 			// ì…ì¶œë ¥ ê´€ë ¨ 
+#include<stdlib.h> 			// ë¬¸ìì—´ ë³€í™˜, ë©”ëª¨ë¦¬ ê´€ë ¨ 
+#include<unistd.h> 			// POSIX ìš´ì˜ì²´ì œ APIì— ëŒ€í•œ ì•¡ì„¸ìŠ¤ ì œê³µ 
+#include<fcntl.h> 			// íƒ€ê²Ÿì‹œìŠ¤í…œ ì…ì¶œë ¥ ì¥ì¹˜ ê´€ë ¨ 
+#include<sys/types.h> 			// ì‹œìŠ¤í…œì—ì„œ ì‚¬ìš©í•˜ëŠ” ìë£Œí˜• ì •ë³´ 
+#include<sys/ioctl.h> 			// í•˜ë“œì›¨ì–´ì˜ ì œì–´ì™€ ìƒíƒœ ì •ë³´ 
+#include<sys/stat.h> 			// íŒŒì¼ì˜ ìƒíƒœì— ëŒ€í•œ ì •ë³´ 
+#include <string.h> 			// ë¬¸ìì—´ ì²˜ë¦¬ 
+#include <time.h> 			// ì‹œê°„ ê´€ë ¨ 
 
-// Å¸°Ù ½Ã½ºÅÛ ÀåÄ¡ ºÒ·¯¿À±â 
+// íƒ€ê²Ÿ ì‹œìŠ¤í…œ ì¥ì¹˜ ë¶ˆëŸ¬ì˜¤ê¸° 
 #define fnd "/dev/fnd" 		// 7-Segment FND 
 #define dot "/dev/dot" 		// Dot Matrix
 #define tact "/dev/tactsw" 	// Tact Switch
@@ -21,16 +21,16 @@
 #define dip "/dev/dipsw"	// Dip Switch
 #define clcd "/dev/clcd" 	// Character LCD
 
-// ÇÔ¼ö ¸ñ·Ï 
-int array_equal(int a[], int b[], int size); 	// ¹è¿­ ÀÏÄ¡ È®ÀÎ ÇÔ¼ö 
-int FIRST_PRINT(); 								// Ã¹ ¹øÂ° CLCD Ãâ·Â ÇÔ¼ö
-int PRINT(char P[]); 							// CLCD Ãâ·Â ÇÔ¼ö
-int Game_1(int tm, int ts, int endTime); 		// ¹®¾ç Ã£±â °ÔÀÓ 
-int Game_2(int tm, int ts, int endTime); 		// ¹Ì·Î Ã£±â °ÔÀÓ 
-int Game_3(int tm, int ts, int endTime); 		//  ¼±  ²÷±â °ÔÀÓ 
+// í•¨ìˆ˜ ëª©ë¡ 
+int array_equal(int a[], int b[], int size); 	// ë°°ì—´ ì¼ì¹˜ í™•ì¸ í•¨ìˆ˜ 
+int FIRST_PRINT(); 								// ì²« ë²ˆì§¸ CLCD ì¶œë ¥ í•¨ìˆ˜
+int PRINT(char P[]); 								// CLCD ì¶œë ¥ í•¨ìˆ˜
+int Game_1(int tm, int ts, int endTime); 		// ë¬¸ì–‘ ì°¾ê¸° ê²Œì„ 
+int Game_2(int tm, int ts, int endTime); 		// ë¯¸ë¡œ ì°¾ê¸° ê²Œì„ 
+int Game_3(int tm, int ts, int endTime); 		//  ì„   ëŠê¸° ê²Œì„ 
 
-// Àü¿ª º¯¼ö ¸ñ·Ï
-// ºÒ·¯¿Â Å¸°Ù ½Ã½ºÅÛ ÀåÄ¡ º¯¼ö ¼±¾ğ 
+// ì „ì—­ ë³€ìˆ˜ ëª©ë¡
+// ë¶ˆëŸ¬ì˜¨ íƒ€ê²Ÿ ì‹œìŠ¤í…œ ì¥ì¹˜ ë³€ìˆ˜ ì„ ì–¸ 
 int dips;
 int leds;
 int dot_mtx;
@@ -38,38 +38,38 @@ int tactsw;
 int clcds;
 int fnds;
 
-unsigned char t; 					// Tact Switch °ª º¯¼ö 
-char P[40];							// CLCD °ª º¯¼ö 
-unsigned char fnd_num[4] = {0,};	// 7-Segment °ª º¯¼ö 
+unsigned char t; 			// Tact Switch ê°’ ë³€ìˆ˜ 
+char P[40];				// CLCD ê°’ ë³€ìˆ˜ 
+unsigned char fnd_num[4] = {0,};	// 7-Segment ê°’ ë³€ìˆ˜ 
 
-// 7-SegmentÀÇ 0~9ÀÇ Ãâ·Â °ª
-// Âü°í·Î À½¼ö °ªÀ¸·Î ÇØ¾ß Á¦´ë·Î Ãâ·ÂµÊ 
+// 7-Segmentì˜ 0~9ì˜ ì¶œë ¥ ê°’
+// ì°¸ê³ ë¡œ ìŒìˆ˜ ê°’ìœ¼ë¡œ í•´ì•¼ ì œëŒ€ë¡œ ì¶œë ¥ë¨ 
 unsigned char Time_Table[]={~0x3f,~0x06,~0x5b,~0x4f,~0x66,~0x6d,~0x7d,~0x07,~0x7f,~0x67,~0x00};
 
-// Timer °ü·Ã º¯¼ö 
+// Timer ê´€ë ¨ ë³€ìˆ˜ 
 int tm = 0; 	// Timer Minute 
-int ts = 0;		// Timer Second(10ÀÇ ÀÚ¸® ¼ö) 
+int ts = 0;	// Timer Second(10ì˜ ìë¦¬ ìˆ˜) 
 int * ptr_m;	// tm Point 
 int * ptr_s;	// ts Point
 
-// time() ÀÌ¿ëÇÑ Timer ¼³Á¤À» À§ÇØ ¼±¾ğ
-// endTimeÀº °íÁ¤, startTimeÀº Èê·¯°¡°Ô ÇÏ°í µÎ °ªÀÇ Â÷·Î ÃÊ ´ÜÀ§ Å¸ÀÌ¸Ó ±¸Çö 
+// time() ì´ìš©í•œ Timer ì„¤ì •ì„ ìœ„í•´ ì„ ì–¸
+// endTimeì€ ê³ ì •, startTimeì€ í˜ëŸ¬ê°€ê²Œ í•˜ê³  ë‘ ê°’ì˜ ì°¨ë¡œ ì´ˆ ë‹¨ìœ„ íƒ€ì´ë¨¸ êµ¬í˜„ 
 int endTime;	 
 int startTime;
 
-// ¸ŞÀÎ ÇÔ¼ö 
+// ë©”ì¸ í•¨ìˆ˜ 
 int main(){
 	FIRST_PRINT();
 	PRINT("   First Game        Start!   ");
-	endTime = (unsigned)time(NULL)+300; 	// endTime¿¡ time °ª(19070.01.01)°ú 300ÃÊ ÇÒ´ç 
-	ptr_s = &ts;							// ts À§Ä¡ ÇÒ´ç 
-	ptr_m = &tm;							// tm À§Ä¡ ÇÒ´ç 
+	endTime = (unsigned)time(NULL)+300; 	// endTimeì— time ê°’(19070.01.01)ê³¼ 300ì´ˆ í• ë‹¹ 
+	ptr_s = &ts;							// ts ìœ„ì¹˜ í• ë‹¹ 
+	ptr_m = &tm;							// tm ìœ„ì¹˜ í• ë‹¹ 
 	
-	// Ã¹ ¹øÂ° °ÔÀÓ
-	// return true = Åë°ú, false = ½ÇÆĞ 
+	// ì²« ë²ˆì§¸ ê²Œì„
+	// return true = í†µê³¼, false = ì‹¤íŒ¨ 
 	if(Game_1(tm, ts, endTime)){
-		printf("Game Clear!\n");					// À©µµ¿ì È¯°æ Ãâ·Â 
-		PRINT("   First Game        Clear!   ");	// Å¸°Ù ½Ã½ºÅÛ Ãâ·Â 
+		printf("Game Clear!\n");			// ìœˆë„ìš° í™˜ê²½ ì¶œë ¥ 
+		PRINT("   First Game        Clear!   ");	// íƒ€ê²Ÿ ì‹œìŠ¤í…œ ì¶œë ¥ 
 		usleep(450000);
 		PRINT("  Second Game        Start!   ");
 	}else{
@@ -78,7 +78,7 @@ int main(){
 		exit(0);
 	}
 	
-	// µÎ ¹øÂ° °ÔÀÓ
+	// ë‘ ë²ˆì§¸ ê²Œì„
 	if(Game_2(tm, ts, endTime)){
 		printf("\nGame Clear!\n");
 		PRINT("  Second Game        Clear!   ");
@@ -90,7 +90,7 @@ int main(){
 		exit(0);
 	}
 	
-	// ¼¼ ¹øÂ° °ÔÀÓ
+	// ì„¸ ë²ˆì§¸ ê²Œì„
 	if(Game_3(tm, ts, endTime)){
 		printf("Game Clear!\n");
 		PRINT(" Bomb Breakdown   Game Clear!!  ");
@@ -104,7 +104,7 @@ int main(){
 
 int Game_1(int tm, int ts, int endTime)
 {
-	// Á¤´ä ¹è¿­ ¸ğÀ½ 
+	// ì •ë‹µ ë°°ì—´ ëª¨ìŒ 
 	int res[5][4] = {
 	{3,2,4,1},
 	{3,1,4,2},
@@ -113,7 +113,7 @@ int Game_1(int tm, int ts, int endTime)
 	{2,4,1,3}
 	};
 	
-	// Á¤´ä ¹è¿­¿¡ µû¶ó Dot Matrix Ãâ·Â 
+	// ì •ë‹µ ë°°ì—´ì— ë”°ë¼ Dot Matrix ì¶œë ¥ 
 	unsigned char d1[5][8] = {
     {0xCC, 0x71, 0x2B, 0xCA, 0xCC, 0xCB, 0xD3, 0x95},
     {0x94, 0x67, 0x59, 0x11, 0x46, 0x7F, 0x95, 0x15},
@@ -122,31 +122,31 @@ int Game_1(int tm, int ts, int endTime)
     {0x66, 0xFE, 0x5D, 0x52, 0xB9, 0x26, 0xE5, 0x81}
   	};
   	
-	int ans1[4] = {0,};	// ÀÔ·Â °ª°ú ºñ±³ÇÒ Á¤´ä ¹è¿­ 
-	int num1[4] = {0,};	// ÀÔ·Â °ª 
-	int k=0; // ¹İº¹¹® º¯¼ö 
-	int i=0; // ¹İº¹¹® º¯¼ö 
+	int ans1[4] = {0,};	// ì…ë ¥ ê°’ê³¼ ë¹„êµí•  ì •ë‹µ ë°°ì—´ 
+	int num1[4] = {0,};	// ì…ë ¥ ê°’ 
+	int k=0; // ë°˜ë³µë¬¸ ë³€ìˆ˜ 
+	int i=0; // ë°˜ë³µë¬¸ ë³€ìˆ˜ 
 
-	srand(time(NULL)); 	// ½Ã°£ °íÁ¤ 
-	int random = 0; 	// ·£´ı °ª º¯¼ö 
-	random = rand()%4; 	// 0~4 °ª random ÇÔ¼ö¿¡ ³Ö±â 
+	srand(time(NULL)); 	// ì‹œê°„ ê³ ì • 
+	int random = 0; 	// ëœë¤ ê°’ ë³€ìˆ˜ 
+	random = rand()%4; 	// 0~4 ê°’ random í•¨ìˆ˜ì— ë„£ê¸° 
 	
-	// ºñ±³ÇÒ Á¤´ä ¹è¿­ ·£´ıÀ¸·Î ³Ö±â 
+	// ë¹„êµí•  ì •ë‹µ ë°°ì—´ ëœë¤ìœ¼ë¡œ ë„£ê¸° 
 	for (k=0; k< 4; k++){
 		ans1[k] = res[random][k];
 	}
 	
 	while(1){
-		int startTime = (unsigned)time(NULL)+1;					// time °ª°ú +1 ¹İº¹ÇØ¼­ ¼±¾ğ 
+		int startTime = (unsigned)time(NULL)+1;				// time ê°’ê³¼ +1 ë°˜ë³µí•´ì„œ ì„ ì–¸ 
 		
 		if(ts<6){
-			// 7-Segment ÀåÄ¡ ºÒ·¯¿À±â¿Í Å¸ÀÌ¸Ó Ãâ·Â ºÎºĞ 
+			// 7-Segment ì¥ì¹˜ ë¶ˆëŸ¬ì˜¤ê¸°ì™€ íƒ€ì´ë¨¸ ì¶œë ¥ ë¶€ë¶„ 
 			fnds = open(fnd, O_RDWR);
 			if(fnds < 0){printf("Can't open FND.\n"); exit(0);}
 			fnd_num[0] = Time_Table[0];
 			fnd_num[1] = Time_Table[2-tm];
 			fnd_num[2] = Time_Table[5-ts];
-			fnd_num[3] = Time_Table[((endTime-startTime)%10)];	// ÃÊ ´ÜÀ§ Å¸ÀÌ¸Ó 
+			fnd_num[3] = Time_Table[((endTime-startTime)%10)];	// ì´ˆ ë‹¨ìœ„ íƒ€ì´ë¨¸ 
 			usleep(200000);
 			write(fnds, &fnd_num, sizeof(fnd_num));
 			close(fnds);
@@ -164,7 +164,7 @@ int Game_1(int tm, int ts, int endTime)
 			return 0;
 		}
 		
-		// Dot Matrix Ãâ·Â ºÎºĞ 
+		// Dot Matrix ì¶œë ¥ ë¶€ë¶„ 
 		dot_mtx = open(dot, O_RDWR);
   		if (dot_mtx < 0) {printf("Can't open dot matrix.\n"); exit(0);}
 		switch (random){
@@ -176,7 +176,7 @@ int Game_1(int tm, int ts, int endTime)
   		}
   		close(dot_mtx);
   		
-  		// Tact Switch ÀÔ·Â ºÎºĞ 
+  		// Tact Switch ì…ë ¥ ë¶€ë¶„ 
 	  	tactsw = open(tact, O_RDWR);
 		if (tact < 0) {printf("Can't open tact\n"); exit(0);}
 	  	read(tactsw, &t, sizeof(t));
@@ -201,14 +201,14 @@ int Game_1(int tm, int ts, int endTime)
 					printf("Input %d\n", t-1); num1[i]=4; i++; usleep(150000); break;
   		}
   		
-  		// Á¤´ä ºñ±³ 
+  		// ì •ë‹µ ë¹„êµ 
   		if(array_equal(ans1, num1, 4)){
   			*ptr_s = ts;
   			*ptr_m = tm;
   			return 1;
 		}
 		
-		// CLCD Ãâ·Â ºÎºĞ 
+		// CLCD ì¶œë ¥ ë¶€ë¶„ 
 		if(i == 0){PRINT("   Enter the      First number! ");}
 		else if(i == 1){{PRINT("   Enter the     Second number! ");}}
 		else if(i == 2){{PRINT("   Enter the      Third number! ");}}
@@ -219,7 +219,7 @@ int Game_1(int tm, int ts, int endTime)
 			for (k=0; k< 4; k++){
 				num1[k] = 0;
 			}
-			ts += 1;				// Æ²¸± °æ¿ì 10ÃÊ °¨¼Ò 
+			ts += 1;						// í‹€ë¦´ ê²½ìš° 10ì´ˆ ê°ì†Œ 
 			printf("-10 sec!\n");
 		};
 	}
@@ -227,14 +227,14 @@ int Game_1(int tm, int ts, int endTime)
 
 int Game_2(int tm, int ts, int endTime)
 {
-	// Á¤´ä ºÎºĞ ans¿Í ÀÔ·Â °ª num, ±× ¿Ü ¹İº¹ºĞ¿¡¼­ »ç¿ëÇÒ º¯¼ö 
+	// ì •ë‹µ ë¶€ë¶„ ansì™€ ì…ë ¥ ê°’ num, ê·¸ ì™¸ ë°˜ë³µë¶„ì—ì„œ ì‚¬ìš©í•  ë³€ìˆ˜ 
 	int ans[16] = {5,9,9,9,5,5,7,7,7,5,9,9,5,9,9,5};
 	int num[16] = {0,};
 	int k=0;
 	int i=0;
 	int j=7;
-	unsigned char c[8] = {0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};	// ¤¡¤¤¸ğ¾ç µµÆ® ¹è¿­ 
-	unsigned char d[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20};	// ½ÃÀÛ Á¡ µµÆ® ¹è¿­ 
+	unsigned char c[8] = {0x03, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};	// ã„±ã„´ëª¨ì–‘ ë„íŠ¸ ë°°ì—´ 
+	unsigned char d[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20};	// ì‹œì‘ ì  ë„íŠ¸ ë°°ì—´ 
 	
 	while(1){
 		int startTime = (unsigned)time(NULL)+1;
@@ -263,18 +263,18 @@ int Game_2(int tm, int ts, int endTime)
 			return 0;
 		}
 		
-		// Dot Matirx Ãâ·Â ºÎºĞ 
+		// Dot Matirx ì¶œë ¥ ë¶€ë¶„ 
 		dot_mtx = open(dot, O_RDWR);
   		if (dot_mtx < 0) {printf("Can't open dot matrix.\n"); exit(0);}
 		
-		// ½ÃÀÛ Á¡ ¹è¿­ c¿¡ dÀÇ ¤¡¤¤ ¸ğ¾ç¸¸ ³Ö±â 
+		// ì‹œì‘ ì  ë°°ì—´ cì— dì˜ ã„±ã„´ ëª¨ì–‘ë§Œ ë„£ê¸° 
 		d[0] = c[0];
 		d[1] = c[1];
 		
 		write(dot_mtx, &d, sizeof(d)); usleep(450000);
   		close(dot_mtx);
   		
-  		// Tact Switch ÀÔ·Â ºÎºĞ 
+  		// Tact Switch ì…ë ¥ ë¶€ë¶„ 
 	  	tactsw = open(tact, O_RDWR);
 		if (tact < 0) {printf("Can't open tact\n"); exit(0);}
 		
@@ -293,14 +293,14 @@ int Game_2(int tm, int ts, int endTime)
 					}
 					else{
 						i++;
-						d[j-1] = d[j];	// ¹İº¹¹®À¸·Î dÀÇ 8°³ÀÇ Çà ¼ø¼­´ë·Î Ãâ·Â 
+						d[j-1] = d[j];	// ë°˜ë³µë¬¸ìœ¼ë¡œ dì˜ 8ê°œì˜ í–‰ ìˆœì„œëŒ€ë¡œ ì¶œë ¥ 
 						d[j] = 0x00;
 						j-=1;
 						for (k=0; k< 16; k++){
 							printf("%d",num[k]);
 						}
 						break;
-					}	//À§ 
+					}	//ìœ„ 
 	    	case 7: printf(" Input %d\n", t); num[i]=7; usleep(150000);
 	    			if(ans[i]!=num[i]){
 	    				ts += 1;
@@ -317,7 +317,7 @@ int Game_2(int tm, int ts, int endTime)
 							printf("%d",num[k]);
 						}
 						break;
-					}					//¿ŞÂÊ 
+					}					//ì™¼ìª½ 
 	    	case 9: printf(" Input %d\n", t); num[i]=9; usleep(150000);
 	    			if(ans[i]!=num[i]){
 	    				ts += 1;
@@ -333,7 +333,7 @@ int Game_2(int tm, int ts, int endTime)
 							printf("%d",num[k]);
 						}
 						break;
-					}					//¿À¸¥ÂÊ 
+					}					//ì˜¤ë¥¸ìª½ 
 	    	case 11: printf(" Input %d\n", t); num[i]=11; usleep(150000); 
 	    			 if(ans[i]!=num[i]){
 	    			 	ts += 1;
@@ -351,10 +351,10 @@ int Game_2(int tm, int ts, int endTime)
 							printf("%d",num[k]);
 						}
 						break;
-					 }	//¾Æ·¡ 
+					 }	//ì•„ë˜ 
   		}
   		
-  		// ºñ±³ ÇÔ¼ö 
+  		// ë¹„êµ í•¨ìˆ˜ 
   		if(array_equal(ans, num, 16)){
   			*ptr_s = ts;
   			*ptr_m = tm;
@@ -367,13 +367,13 @@ int Game_3(int tm, int ts, int endTime)
 {
 	unsigned char c;
 	unsigned char d[3] ={0xad, 0x5c, 0xc8};
-	int data[1] = {0,}; 	// Dip Switch ÀÔ·Â °ª 
+	int data[1] = {0,}; 	// Dip Switch ì…ë ¥ ê°’ 
 
 	srand(time(NULL));
 	int random = 0;
 	random = rand()%3;
 	
-	data[0] |= d[random];	// Zero matrix¿Í or ¿¬»ê 
+	data[0] |= d[random];	// Zero matrixì™€ or ì—°ì‚° 
 	
 	leds = open(led, O_RDWR);
   	if (leds < 0) {printf("Can't open dot led.\n"); exit(0);}
@@ -408,11 +408,11 @@ int Game_3(int tm, int ts, int endTime)
 			return 0;
 		}
 		
-		// Dip Switch ÀÔ·Â ºÎºĞ 
+		// Dip Switch ì…ë ¥ ë¶€ë¶„ 
 	  	read(dips, &c, sizeof(c));
   		
-  		// ÀÔ·Â °ª¿¡ µû¶ó Ãâ·Â °ªÀÌ ´Ù¸§
-		// Âü°í·Î °¢ ½ºÀ§Ä¡´Â 0~128 »çÀÌÀÇ 2ÀÇ Á¦°ö¼öÀÎµ¥ ÀÔ·Â °ªÀº ÇÕ ¿¬»ê 
+  		// ì…ë ¥ ê°’ì— ë”°ë¼ ì¶œë ¥ ê°’ì´ ë‹¤ë¦„
+		// ì°¸ê³ ë¡œ ê° ìŠ¤ìœ„ì¹˜ëŠ” 0~128 ì‚¬ì´ì˜ 2ì˜ ì œê³±ìˆ˜ì¸ë° ì…ë ¥ ê°’ì€ í•© ì—°ì‚° 
 		if(data[0]==0xad){
 			if (c == 64){
 			close(dips);
@@ -443,7 +443,7 @@ int Game_3(int tm, int ts, int endTime)
 	}
 }
 
-// ¹è¿­ ÀÏÄ¡ ÇÔ¼ö: size¸¦ ¹Ş¾Æ¿Í¼­ ÇÑ Ä­¾¿ ºñ±³ 
+// ë°°ì—´ ì¼ì¹˜ í•¨ìˆ˜: sizeë¥¼ ë°›ì•„ì™€ì„œ í•œ ì¹¸ì”© ë¹„êµ 
 int array_equal(int a[], int b[], int size){
 	int i;
 	for (i=0; i< size; i++){
@@ -458,8 +458,8 @@ int array_equal(int a[], int b[], int size){
 	}
 }
 
-// °ÔÀÓ ½ÃÀÛ ½Ã CLCD¿¡ Ãâ·ÂÇÏ´Â ÇÔ¼ö
-// ±×³É PRINT¶û ´Ù¸¥ Á¡Àº Tact Switch ÀÔ·Â ½Ã return 
+// ê²Œì„ ì‹œì‘ ì‹œ CLCDì— ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+// ê·¸ëƒ¥ PRINTë‘ ë‹¤ë¥¸ ì ì€ Tact Switch ì…ë ¥ ì‹œ return 
 int FIRST_PRINT(){
 	clcds = open(clcd, O_RDWR);
 	if(clcds < 0){printf("Can't open Character LCD.\n"); exit(0);}
@@ -479,7 +479,7 @@ int FIRST_PRINT(){
 	}
 }
 
-// CLCD Ãâ·Â ÇÔ¼ö 
+// CLCD ì¶œë ¥ í•¨ìˆ˜ 
 int PRINT(char P[]){
 	clcds = open(clcd, O_RDWR);
 	if(clcds < 0){printf("Can't open Character LCD.\n"); exit(0);}
