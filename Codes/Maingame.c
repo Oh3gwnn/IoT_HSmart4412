@@ -1,8 +1,3 @@
-
-// Bomb Breakdown(폭탄 해체 게임) Code 
-// 기본적으로 TeraTerm, 타겟 시스템 둘 다 출력 될 수 있게 제작하였습니다. 
-
-// 사용한 헤더파일 종류 
 #include<stdio.h> 			// 입출력 관련 
 #include<stdlib.h> 			// 문자열 변환, 메모리 관련 
 #include<unistd.h> 			// POSIX 운영체제 API에 대한 액세스 제공 
@@ -12,14 +7,18 @@
 #include<sys/stat.h> 			// 파일의 상태에 대한 정보 
 #include <string.h> 			// 문자열 처리 
 #include <time.h> 			// 시간 관련 
+// 사용 헤더파일 종류
 
-// 타겟 시스템 장치 불러오기 
 #define fnd "/dev/fnd" 		// 7-Segment FND 
 #define dot "/dev/dot" 		// Dot Matrix
 #define tact "/dev/tactsw" 	// Tact Switch
 #define led "/dev/led" 		// LED 
 #define dip "/dev/dipsw"	// Dip Switch
 #define clcd "/dev/clcd" 	// Character LCD
+// 타겟 시스템 장치 불러오기 
+
+//Bomb Breakdown(폭탄 해체 게임) Code 
+//기본적으로 TeraTerm, 타겟 시스템 둘 다 출력 될 수 있게 제작하였습니다. 
 
 // 함수 목록 
 int array_equal(int a[], int b[], int size); 	// 배열 일치 확인 함수 
