@@ -17,5 +17,5 @@
  - Goggle Docs로 제작되었습니다. 링크를 통해 보는 것이 가독성이 좋습니다.
 
 ## **4. Bomb Breakdown_04_20220605**
- - [CLCD, LED 학습 및 선 끊기 게임 제작 보고서](https://docs.google.com/document/d/1gHcK0-FiGUvA0DYAOu1RZ-o5m-i1AtpV3A5RLSvth9A/edit?usp=sharing)
+ - [CLCD, LED 학습 및 선 끊기 게임 제작 보고서](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
  - Goggle Docs로 제작되었습니다. 링크를 통해 보는 것이 가독성이 좋습니다.
