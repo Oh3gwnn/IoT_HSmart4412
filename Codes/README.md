@@ -31,13 +31,13 @@
 	* 타이머 기능 제작
 	* 타겟 시스템 7-Segment, `sleep()` 함수 이용
 
-* **time2.c**
-	* 타이머 기능 제작
-	* 타겟 시스템 7-Segment, `time.h` 모듈의 `time()` 함수 이용
-
 ---
 
 ### **2022-06-05**
+
+* **time2.c**
+	* 타이머 기능 제작
+	* 타겟 시스템 7-Segment, `time.h` 모듈의 `time()` 함수 이용
 
 * **clcd.c**
 	* 타겟 시스템 Character LCD 학습
