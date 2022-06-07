@@ -1,5 +1,5 @@
 
-# **폭탄 해체 게임(H-Smart4412 이용)**
+# **폭탄 해체 게임(H-Smart4412 이용) 문서**
 	폭탄 해체 게임 보고서 정리
 
 ## **1. Bomb Breakdown_01_20220516**
@@ -19,3 +19,11 @@
 ## **4. Bomb Breakdown_04_20220605**
  - [CLCD, LED 학습 및 선 끊기 게임 제작 보고서](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
  - Goggle Docs로 제작되었습니다. 링크를 통해 보는 것이 가독성이 좋습니다.
+
+ ## **5. Bomb Breakdown_04_20220607**
+ - [폭탄 해체 게임 제작 최종 보고서](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
+ - 수정 중
+
+  ## **6. Bomb Breakdown_Manual**
+ - [폭탄 해체 게임 매뉴얼](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
+ - 수정 중
