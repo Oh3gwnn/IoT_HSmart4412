@@ -38,7 +38,7 @@
 >
 > - **폭탄해체 게임 알고리즘**
 >
->![img_01](/Images/01.png)
+>   ![img_01](/Images/01.png)
 
  - 발표자 : 임형택
 
@@ -51,9 +51,13 @@
 >
 >   매뉴얼, 작동 원리, 실행 결과 등 작성(자세한 내용은 제작한 문서 참고)
 >
+>   ![gif_01](/Images/Pattern_interpretation.gif)
+>
 > - **두번째 게임 - 미로 찾기**
 >
 >   매뉴얼, 작동 원리, 실행 결과 등 작성(자세한 내용은 제작한 문서 참고)
+>
+>   ![gif_02](/Images/Maze.gif)
 >
 > - **'Bomb Breakdown_03_20220531.pdf'** 참고 : [2차 중간 발표](https://docs.google.com/document/d/1gHcK0-FiGUvA0DYAOu1RZ-o5m-i1AtpV3A5RLSvth9A/edit?usp=sharing)
 
@@ -69,6 +73,8 @@
 >
 >   매뉴얼, 작동 원리, 실행 결과 등 작성(자세한 내용은 제작한 문서 참고)
 >
+>   ![gif_03](/Images/Cut_line.gif)
+>
 > - **타이머 기능(`sleep()` 함수 이용)**
 >
 >   타이머 구동을 위한 코드 작성 및 실습(자세한 내용은 제작한 문서 참고)
@@ -76,6 +82,8 @@
 > - **Character LCD 기능**
 >
 >   문자 출력을 위한 코드 작성 및 실습(자세한 내용은 제작한 문서 참고)
+>
+>   ![img_02](/Images/Clcd.jpg)
 >
 > - **'Bomb Breakdown_04_20220605.pdf'** : [3차 중간 발표](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
 
@@ -92,6 +100,8 @@
 > - **타이머 기능(`<time.h>` 모듈 활용)**
 >
 >   타이머 구동을 위한 코드 작성 및 실습(자세한 내용은 제작한 문서 참고)
+>
+>   ![gif_04](/Images/timer.gif)
 >
 > - **'Bomb Breakdown_04_20220607.pdf'** : [최종 발표](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
 >
