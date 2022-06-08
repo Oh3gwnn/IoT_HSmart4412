@@ -20,9 +20,8 @@
  - [CLCD, LED 학습 및 선 끊기 게임 제작 보고서](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
  - Goggle Docs로 제작되었습니다. 링크를 통해 보는 것이 가독성이 좋습니다.
 
- ## **5. Bomb Breakdown_04_20220607**
- - [폭탄 해체 게임 제작 최종 보고서](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
- - 수정 중
+ ## **5. BOMB BREAKDOWN GAME**
+ - [폭탄 해체 게임 제작 최종 보고서](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/README.md)
 
   ## **6. Bomb Breakdown_Manual**
  - [폭탄 해체 게임 매뉴얼](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
