@@ -93,8 +93,6 @@ H-Smart4412 타겟 시스템의 다양한 장치를 이용하고 싶어서 계�
  - [**Keep Talking and Nobody Explodes**](http://www.keeptalkinggame.com/) - 게임 참고
  - [**Keep Talking and Nobody Explodes 폭탄 해체 매뉴얼**](https://www.bombmanual.com/ko/) - 게임 매뉴얼 참고
  - [**SnakeGame**](https://github.com/jinwoo1225/SnakeGameWithSmart4412) - H-Smart4412 타겟 시스템의 장치 활용 참고  
- - [**array-equal**](https://patiencelee.tistory.com/667) - 부분 참고
- - [**time()**](https://makerejoicegames.tistory.com/99) - 부분 참고
 
 ---
 
