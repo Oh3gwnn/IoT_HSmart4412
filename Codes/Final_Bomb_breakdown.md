@@ -1,21 +1,23 @@
 
-# **폭탄 해체 게임(H-Smart4412 이용)**
+# **폭탄 해체 게임(BOMB BREAKDOWN)**
 
 
-## **프로젝트 계획 발표(22.05.17)**
+## **1. 프로젝트 계획**
 
-> - **프로젝트 계획**
->
->   ['**Keep Talking and Nobody Explodes**'](http://www.keeptalkinggame.com/) 게임 참고
->
-> - **기존 프로젝트 사전조사**
+### H-Smart4412 타겟 시스템의 다양한 장치를 이용하고 싶어서 계획한 폭탄 해체 게임.
+
+### 게임을 해결해나가는 아이디어 부분은 `Keep Talking and Nobody Explodes` 게임을 참고하였습니다.
+ - ['**Keep Talking and Nobody Explodes**'](http://www.keeptalkinggame.com/) 사이트 링크 참고
+
+---
+
+## **2. 기존 프로젝트 사전조사**
 >
 >   기존에 존재하는 프로젝트들의 전체적인 구조와 IEB Board 사용 참고
 >
 > - **'Bomb Breakdown_01_20220516.pdf'** 참고 : [프로젝트 계획 발표](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/Docs/Bomb%20Breakdown_01_20220516.pdf)
->
- - 발표자 : 임형택
 
+```
 ---
 
 ## **1차 중간 발표(22.05.24)**
@@ -38,7 +40,7 @@
 >
 > - **폭탄해체 게임 알고리즘**
 >
->   ![img_01](/Images/Bomb_flowchart.jpg)
+>   ![img_01](../Images/Bomb_flowchart.jpg)
 
  - 발표자 : 임형택
 
@@ -108,3 +110,6 @@
 > - **폭탄 해체 게임 실행(수정 중)** : [유튜브 링크](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
 
  - 발표자 : 임형택
+
+ ### H-Smart4412 타겟 시스템의 장치를 활용하는 부분은 `Snakegame`을 참고하였습니다.
+ - ['**SnakeGame**'](https://github.com/jinwoo1225/SnakeGameWithSmart4412) 깃허브 링크 참고
