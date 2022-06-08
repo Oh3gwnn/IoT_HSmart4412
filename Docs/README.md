@@ -24,5 +24,4 @@
  - [폭탄 해체 게임 제작 최종 보고서](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/README.md)
 
   ## **6. Bomb Breakdown_Manual**
- - [폭탄 해체 게임 매뉴얼](https://docs.google.com/document/d/1aSvvhIvSaBHxP_qkZ1ZwGBGDzTM5q5R3aMHY-2sYNIg/edit?usp=sharing)
- - 수정 중
+ - [폭탄 해체 게임 매뉴얼](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/Docs/Bomb_Breakdown_Manual.pdf)

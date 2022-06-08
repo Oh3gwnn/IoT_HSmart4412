@@ -68,6 +68,12 @@ H-Smart4412 타겟 시스템의 다양한 장치를 이용하고 싶어서 계�
     실시간으로 확인할 수 있는 타이머를 7-segment를 이용하여 출력
     ![gif_04](/Images/Timer.gif)
 
+ - ### **게임 매뉴얼**
+   기존 게임의 매뉴얼을 참고하여 폭탄 해체 게임의 매뉴얼도 제작하였습니다.  
+   ![img_02](/Images/BB_Manual.png)  
+   [**Bomb Breakdown Manual**](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/Docs/Bomb_Breakdown_Manual.pdf) 참고
+
+
 ---
 
 ## **4. 게임 코드**
@@ -90,5 +96,7 @@ H-Smart4412 타겟 시스템의 다양한 장치를 이용하고 싶어서 계�
  - [**array-equal**](https://patiencelee.tistory.com/667) - 부분 참고
  - [**time()**](https://makerejoicegames.tistory.com/99) - 부분 참고
 
-## [**제작 일지**](https://makerejoicegames.tistory.com/99)
+---
+
+## [**제작 일지**](https://github.com/hyoungteak/IoT_HSmart4412/blob/main/Docs/Bomb_breakdown_production_log.md)
 
